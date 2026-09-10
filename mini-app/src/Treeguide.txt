@@ -1,0 +1,9 @@
+src/
+├── api/          -Пусто (здесь будет client.js для запросов к Go)
+├── app/          -App.jsx, AppConfig.jsx, main.jsx, routes.js, eruda.js
+├── assets/       -Картинки и иконки
+├── components/   -Переиспользуемые мелкие UI-элементы
+├── panels/       -Экраны/страницы приложения
+├── services/     -Пусто (здесь будет vk.js для работы с VK Bridge)
+├── styles/       -Пусто (для CSS)
+└── utils/        -Вспомогательные функции
