@@ -1,4 +1,4 @@
-#moodboard
+moodboard
 
 A mini-app designed for viewing schedules, searching for information, and managing study plans.
 
