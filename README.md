@@ -1,4 +1,5 @@
-# Moodboard
+#moodboard
 
-тест 3
+A mini-app designed for viewing schedules, searching for information, and managing study plans.
 
+Target Integration: VK and Sferum.
