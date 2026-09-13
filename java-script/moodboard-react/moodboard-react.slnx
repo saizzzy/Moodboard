@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="moodboard-react/moodboard-react.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
