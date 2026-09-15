@@ -1,0 +1,271 @@
+/* Базовый экран и фон презентации (Сферум) */
+body {
+    background-color: #F5F7FA; /* Светлый нейтральный фон, характерный для веб-версии Сферума */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Эмулятор смартфона */
+.vk-phone-frame {
+    background-color: #FFFFFF; /* Белый фон интерфейса */
+    width: 100%;
+    max-width: 375px;
+    height: 720px;
+    border-radius: 28px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08); /* Мягкая нейтральная тень */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #E4E8EE;
+}
+
+/* Шапка приложения */
+.vk-header {
+    background-color: #FFFFFF;
+    height: 52px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E4E8EE;
+    z-index: 10;
+}
+
+.vk-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vk-close-icon {
+    font-size: 18px;
+    color: #818C99;
+    cursor: pointer;
+}
+
+.vk-app-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000; /* Строгий черный текст */
+}
+
+.vk-dots-icon {
+    color: #2688EB; /* Фирменный синий цвет Сферума/VK */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Область контента со скроллом */
+.vk-app-content {
+    background-color: #F5F7FA;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 80px;
+}
+
+/* Мини-карточка статистики вверху */
+.diary-stats-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid #E4E8EE;
+}
+
+.diary-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diary-stat-num {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2688EB; /* Синий акцент */
+}
+
+.diary-stat-label {
+    font-size: 11px;
+    color: #818C99;
+    margin-top: 2px;
+}
+
+/* Заголовок дня и кнопка добавления */
+.day-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.day-heading h3 {
+    margin: 0;
+    font-size: 15px;
+    color: #2C2D2E;
+    font-weight: 600;
+}
+
+.add-task-btn {
+    background: none;
+    border: none;
+    color: #2688EB;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+/* КАРТОЧКА УРОКА */
+.lesson-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #E4E8EE;
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lesson-time {
+    font-size: 12px;
+    color: #818C99;
+    font-weight: 500;
+}
+
+/* Цветные теги для предметов */
+.lesson-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.lesson-badge.math {
+    background-color: rgba(38, 136, 235, 0.1);
+    color: #2688EB;
+}
+
+.lesson-badge.info {
+    background-color: rgba(79, 194, 47, 0.1); /* Зеленый акцент для информатики */
+    color: #4FC22F;
+}
+
+.lesson-topic {
+    margin: 0;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Блок Домашнего Задания внутри урока */
+.homework-box {
+    background-color: #F9F9FB;
+    border-left: 3px solid #2688EB; /* Синяя полоса слева */
+    border-radius: 4px 8px 8px 4px;
+    padding: 10px 12px;
+}
+
+.homework-author {
+    margin-bottom: 6px;
+}
+
+/* Бейджи авторов ДЗ */
+.author-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.author-badge.teacher {
+    background-color: rgba(38, 136, 235, 0.15);
+    color: #2688EB;
+}
+
+.author-badge.student {
+    background-color: #E4E8EE;
+    color: #6D7885;
+}
+
+.homework-text {
+    margin: 0;
+    font-size: 13px;
+    color: #2C2D2E;
+    line-height: 1.4;
+}
+
+/* Кнопка запроса документации / информации */
+.doc-request-btn {
+    background-color: #EDF1F5;
+    color: #2C2D2E;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.doc-request-btn:hover {
+    background-color: #E1E7ED;
+    color: #2688EB;
+}
+
+/* НИЖНЕЕ МЕНЮ (Tabbar) */
+.vk-tabbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E4E8EE;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.tabbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+    color: #818C99;
+    width: 50%;
+}
+
+.tabbar-item.active {
+    color: #2688EB; /* Синий цвет для активной вкладки по стандартам Сферума/VK */
+}
+
+.tab-icon {
+    font-size: 18px;
+}
+
+.tab-label {
+    font-size: 11px;
+    font-weight: 500;
+}
