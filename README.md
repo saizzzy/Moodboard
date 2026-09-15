@@ -1,5 +1,68 @@
-moodboard
+# Moodboard Project
 
-A mini-app designed for viewing schedules, searching for information, and managing study plans.
+Мини-приложение для организации и планирования с использованием Go-бэкенда, React-фронтенда и Nginx в качестве веб-сервера.
 
-Target Integration: VK and Sferum.
+## Системные требования
+
+- Установленный [Docker](https://www.docker.com/) и Docker Compose.
+- Установленный [Node.js](https://nodejs.org/) (для сборки фронтенда).
+- Установленный [Go](https://golang.org/) (при локальной разработке бэкенда).
+
+---
+
+## Быстрый запуск через Docker Compose
+
+Вся система запускается одной командой с помощью Docker. Nginx выступает единой точкой входа (порт `80`), раздает статический фронтенд и проксирует запросы к Go-бэкенду.
+
+### Шаг 1. Сборка фронтенда
+
+Перед запуском контейнеров необходимо собрать статичные файлы клиентской части:
+
+1. Перейдите в папку с фронтендом:
+   ```bash
+   cd frontend/frontend
+   ```
+2. Установите зависимости:
+   ```bash
+   npm install
+   ```
+3. Соберите проект для продакшена:
+   ```bash
+   npm run build
+   ```
+   *В результате в директории `frontend/frontend/dist` появятся готовые файлы.*
+
+### Шаг 2. Запуск контейнеров
+
+1. Вернитесь в корневую директорию проекта:
+   ```bash
+   cd ../../
+   ```
+2. Запустите сборку и поднимите сервисы в фоновом режиме:
+   ```bash
+   docker compose up --build -d
+   ```
+
+---
+
+## Проверка работоспособности
+
+- **Веб-интерфейс (Frontend через Nginx):** откройте в браузере [http://localhost](http://localhost)
+- **Бэкенд (Go API):** доступен по адресу [http://localhost/api/](http://localhost/api/) (проксируется через Nginx)
+
+---
+
+## Полезные команды Docker
+
+- Просмотр статуса контейнеров:
+  ```bash
+  docker compose ps
+  ```
+- Просмотр логов Nginx:
+  ```bash
+  docker compose logs nginx
+  ```
+- Остановка проекта:
+  ```bash
+  docker compose down
+  ```
