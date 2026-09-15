@@ -1,2 +1,0 @@
-C:\Users\Roll3x\Moodboard\backend\java-script\moodboard-react\moodboard-react\obj\Debug\moodboard-react.esproj.CoreCompileInputs.cache
-C:\Users\Roll3x\Moodboard\java-script\moodboard-react\moodboard-react\obj\Debug\moodboard-react.esproj.CoreCompileInputs.cache
