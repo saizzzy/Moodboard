@@ -1,268 +1,119 @@
-/* Базовый экран и фон презентации */
 body {
-    background-color: #ebedf0;
+    background-color: #a8a8a8;
     margin: 0;
     padding: 0;
+
+    /*Makes items at the center*/
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    font-family: sans-serif;
 }
 
-/* Эмулятор смартфона */
-.vk-phone-frame {
-    background-color: #f5f6f8;
+.page-container {
+    background-color: #ffffff;
+    padding: 389px;
+    padding-left: 200px;
+    padding-right: 200px;
+    max-width: 600px;
     width: 100%;
-    max-width: 375px;
-    height: 720px;
-    border-radius: 28px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    box-sizing: border-box;
     position: relative;
 }
 
-/* Шапка приложения */
-.vk-header {
-    background-color: #ffffff;
-    height: 52px;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #e7e8ec;
-    z-index: 10;
-}
-
-.vk-header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.vk-close-icon {
-    font-size: 18px;
-    color: #818c99;
-    cursor: pointer;
-}
-
-.vk-app-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #000000;
-}
-
-.vk-dots-icon {
-    color: #0077ff;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Область контента со скроллом */
-.vk-app-content {
-    background-color: #ffffff;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    flex: 1;
-    overflow-y: auto; /* Позволяет прокручивать расписание вниз */
-    padding-bottom: 80px; /* Чтобы контент не перекрывался нижним меню */
-}
-
-/* Мини-карточка статистики вверху */
-.diary-stats-card {
-    background-color: #ffffff;
-    border-radius: 14px;
-    padding: 12px;
-    display: flex;
-    justify-content: space-around;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-}
-
-.diary-stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.diary-stat-num {
-    font-size: 18px;
-    font-weight: 700;
-    color: #4bb34b; /* Зеленый цвет для хорошей статистики */
-}
-
-.diary-stat-label {
-    font-size: 11px;
-    color: #818c99;
-    margin-top: 2px;
-}
-
-/* Заголовок дня и кнопка добавления */
-.day-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 4px;
-}
-
-    .day-heading h3 {
-        margin: 0;
-        font-size: 15px;
-        color: #6d7885;
-        font-weight: 600;
-    }
-
-.add-task-btn {
-    background: none;
-    border: none;
-    color: #0077ff;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 4px 8px;
-}
-
-/* КАРТОЧКА УРОКА */
-.lesson-card {
-    background-color: #00bfff;
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.lesson-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.lesson-time {
-    font-size: 12px;
-    color: #818c99;
-    font-weight: 500;
-}
-
-/* Цветные теги для предметов */
-.lesson-badge {
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-    .lesson-badge.math {
-        background-color: rgba(255, 152, 0, 0.1);
-        color: #e65100;
-    }
-
-    .lesson-badge.info {
-        background-color: rgba(0, 145, 234, 0.1);
-        color: #01579b;
-    }
-
-.lesson-topic {
-    margin: 0;
-    font-size: 16px;
-    color: #000000;
-    font-weight: 600;
-}
-
-/* Блок Домашнего Задания внутри урока */
-.homework-box {
-    background-color: #f9fafb;
-    border-left: 3px solid #0077ff;
-    border-radius: 4px 10px 10px 4px;
-    padding: 10px 12px;
-}
-
-.homework-author {
-    margin-bottom: 6px;
-}
-
-/* Бейджи авторов ДЗ */
-.author-badge {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 6px;
-    border-radius: 4px;
-}
-
-    .author-badge.teacher {
-        background-color: #e2f2ff;
-        color: #0066cc;
-    }
-
-    .author-badge.student {
-        background-color: #f0f2f5;
-        color: #65676b;
-    }
-
-.homework-text {
-    margin: 0;
-    font-size: 13px;
-    color: #2c3e50;
-    line-height: 1.4;
-}
-
-/* Кнопка запроса документации / информации */
-.doc-request-btn {
-    background-color: #f0f2f5;
-    color: #454647;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-}
-
-    .doc-request-btn:hover {
-        background-color: #e4e6e9;
-        color: #000000;
-    }
-
-/* НИЖНЕЕ МЕНЮ (Tabbar) */
-.vk-tabbar {
+.panel-box-one {
+    background-color: #c2c2c2;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0px;
+    left: 0px;
     width: 100%;
-    height: 56px;
-    background-color: #ffffff;
-    border-top: 1px solid #e7e8ec;
+    padding-top: 10px;
+    border-radius: 12px;
+
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+    gap: 30px;
     box-sizing: border-box;
 }
 
-.tabbar-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
+.shedule-button {
+    background-color: #c2c2c2;
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin-bottom: 10px;
     cursor: pointer;
-    color: #818c99;
-    width: 50%;
+    font-family: Comic Sans MS;
 }
 
-    .tabbar-item.active {
-        color: #0077ff; /* Подсветка активной вкладки цветом VK */
-    }
-
-.tab-icon {
-    font-size: 18px;
+.shedule-button:hover {
+  background-color: #a0a0a0; /* Changes color when hovered */
 }
 
-.tab-label {
-    font-size: 11px;
-    font-weight: 500;
+.rating-button {
+    background-color: #c2c2c2;
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-family: Comic Sans MS;
+}
+
+.rating-button:hover {
+  background-color: #a0a0a0; /* Changes color when hovered */
+}
+
+.profile-button {
+    background-color: #c2c2c2;
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-family: Comic Sans MS;
+}
+
+.profile-button:hover {
+  background-color: #a0a0a0; /* Changes color when hovered */
+}
+
+.panel-box-two {
+    background-color: #c2c2c2;
+    position: absolute;
+        top: 0px;
+        left: 0px;
+    width: 100%;
+    padding-top: 60px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 30px;
+    position: relative;
+        bottom: 30px;
+    font-family: Comic Sans MS;
+}
+
+.other-options {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+        bottom: 40px;
+    font-size: 40px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.other-options:hover {
+  background-color: #a0a0a0; /* Changes color when hovered */
 }
