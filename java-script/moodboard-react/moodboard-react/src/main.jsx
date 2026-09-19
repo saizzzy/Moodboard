@@ -1,25 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import bridge from '@vkontakte/vk-bridge';
-import '@vkontakte/vkui/dist/vkui.css';
 import './design.css';
 
-import { ThemeProvider } from './context/ThemeContext';
-import { App } from './App';
+function MyPage() {
+    return (
+        <div className="page-container">
+            <div className="panel-box-one">
+                <button className="shedule-button">Shedule</button>
+                <button className="rating-button">Rating</button>
+                <button className="profile-button">Profile</button>
+            </div>
 
-// ===== БЛОК: инициализация VK Bridge =====
-// Отправляем событие готовности приложения, чтобы VK корректно отрисовал его.
-bridge.send('VKWebAppInit');
-// ===== КОНЕЦ БЛОК: инициализация VK Bridge =====
+            <div className="panel-box-two">
+                <div className="title">Moodboard</div>
+                <button className="other-options">
+                    ...
+                </button>
+            </div>
+        </div>
+    );
+}
 
-// ===== БЛОК: монтирование приложения =====
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+        <MyPage />
     </React.StrictMode>
 );
-// ===== КОНЕЦ БЛОК: монтирование приложения =====
 
-export default App;
+export default MyPage;
