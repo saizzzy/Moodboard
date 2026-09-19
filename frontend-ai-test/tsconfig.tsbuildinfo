@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/components/appheader.tsx","./src/components/settingsmodal.tsx","./src/components/tabbar.tsx","./src/data/grades.ts","./src/data/lessons.ts","./src/screens/gradesscreen.tsx","./src/screens/profilescreen.tsx","./src/screens/schedulescreen.tsx"],"version":"5.9.3"}
